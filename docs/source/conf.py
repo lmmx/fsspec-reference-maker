@@ -12,14 +12,16 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../'))
+import kerchunk
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'fsspec-reference-maker'
+project = 'kerchunk'
 copyright = '2021, Martin Durant'
 author = 'Martin Durant'
+version = kerchunk.__version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -40,20 +42,17 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+autodoc_mock_imports = [
+    "cfgrib",
+]
 
 
 # -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-pygments_style="sphinx"
-
+pygments_style = "sphinx"
 html_theme = "sphinx_rtd_theme"
+html_logo = "kerchunk.png"
